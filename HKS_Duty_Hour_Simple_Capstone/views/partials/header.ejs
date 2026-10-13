@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= title %></title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/dashboard"><span class="logo">H</span><span>HKS <small>DUTY HOUR</small></span></a>
+  <% if (user) { %>
+  <nav>
+    <a href="/dashboard">Dashboard</a>
+    <% if (user.role === 'Teacher' || user.role === 'Admin') { %><a href="/teacher">Supervisor</a><% } %>
+    <% if (user.role === 'Admin') { %><a href="/admin">Users</a><% } %>
+    <a class="signout" href="/logout">Log out</a>
+  </nav>
+  <% } %>
+</header>
